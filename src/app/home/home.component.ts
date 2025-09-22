@@ -10,6 +10,7 @@ import { MenuComponent } from "../menu/menu.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+userName: string = 'Admin';
 
   
 
