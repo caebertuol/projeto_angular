@@ -1,25 +1,28 @@
 <app-menu></app-menu>
 
-
-<div class="imagem">
-    
-    <img src="ranger.png" alt="" />
-
+<div class="imagem-fundo">
+   <img src="ranger.png" alt="Plano de fundo com uma Ford Ranger" />
 </div>
 
-<div class="container mt-5">
+<!-- Container do card de boas-vindas -->
+<!-- A diretiva *ngIf controla a exibição deste bloco inteiro -->
+<div *ngIf="showWelcomeCard" class="welcome-container">
 
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <h4 class="card-title">Bem-vindo ao Dashboard FORD, {{ userName }}!</h4>
+  <div class="card shadow-lg text-center">
+    <div class="card-body p-5">
+      <h4 class="card-title mb-3">Bem-vindo(a), {{ userName }}!</h4>
       <p class="card-text">
-        Seu painel de controle centralizado para insights e gerenciamento da frota.
-      </p>
-      <p class="card-text">
-        Utilize o menu de navegação ou o link abaixo para acessar as informações detalhadas dos veículos.
+        Utilize o menu de navegação ou selecione a opção <strong>dashboard</strong> para consultar as informações detalhadas dos veículos.
       </p>
 
-      <a routerLink="/dashboard" class="btn btn-primary">Acessar Dashboard</a>
+      <!-- Botões de Ação -->
+      <div class="mt-4">
+        <!-- Ao clicar no Dashboard, esconde o card e navega -->
+        <a routerLink="/dashboard" (click)="hideCard()" class="btn btn-primary btn-lg">Dashboard</a>
+        <!-- O método logout() também vai esconder o card -->
+        <button (click)="logout()" class="btn btn-outline-secondary btn-lg ms-2">Logout</button>
+      </div>
+      
     </div>
   </div>
 

@@ -26,7 +26,7 @@ export class LoginComponent {
     event.stopPropagation();
   }
   login() {
-    if (this.nome !== 'admin' || this.senha !== '101025') {
+    if (this.nome !== 'admin' || this.senha !== '123456') {
       alert('Nome ou senha Invalidos');
     } else {
       this.router.navigate(['/home']);
