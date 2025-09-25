@@ -1,7 +1,7 @@
-<app-menu></app-menu>
+<!-- <app-menu></app-menu> -->
 
-<div class="imagem-fundo">
-   <img src="ranger.png" alt="Plano de fundo com uma Ford Ranger" />
+<div class="imagem-fundo" [class.is-dimmed]="isBackgroundDimmed">
+  <img src="ranger.png" alt="Plano de fundo com uma Ford Ranger" />
 </div>
 
 <!-- Container do card de boas-vindas -->
@@ -12,17 +12,20 @@
     <div class="card-body p-5">
       <h4 class="card-title mb-3">Bem-vindo(a), {{ userName }}!</h4>
       <p class="card-text">
-        Utilize o menu de navegação ou selecione a opção <strong>dashboard</strong> para consultar as informações detalhadas dos veículos.
+        Selecione a opção <strong>dashboard</strong> para consultar
+        as informações detalhadas dos veículos ou logout para sair.
       </p>
 
       <!-- Botões de Ação -->
       <div class="mt-4">
         <!-- Ao clicar no Dashboard, esconde o card e navega -->
+        <button class="close-btn" (click)="hideCard()">x</button>
+
         <a routerLink="/dashboard" (click)="hideCard()" class="btn btn-primary btn-lg">Dashboard</a>
         <!-- O método logout() também vai esconder o card -->
         <button (click)="logout()" class="btn btn-outline-secondary btn-lg ms-2">Logout</button>
       </div>
-      
+
     </div>
   </div>
 
