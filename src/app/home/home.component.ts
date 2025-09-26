@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-/* import { MenuComponent } from "../menu/menu.component"; */
+ import { MenuComponent } from "../menu/menu.component"; 
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   imports: [
     CommonModule,
     FormsModule,
-    /* MenuComponent, */
+    MenuComponent, 
     RouterLink
   ],
   templateUrl: './home.component.html',

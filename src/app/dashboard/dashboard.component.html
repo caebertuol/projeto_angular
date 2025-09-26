@@ -3,7 +3,7 @@
 <h2 class="text-primary text-center">Dashboard Ford</h2>
 <div class="d-flex align-items-center justify-content-evenly">
   <div class="card w-25 mx-1">
-    <div class="card-header">Veiculo</div>
+    <div class="card-header">Veículo</div>
     <div class="card-body">
       <form [formGroup]="selectCarForms">
         <select class="form-select my-2" name="" id="" formControlName="carId">
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="card w-25 mx-1">
-    <div class="card-header">Veiculos Conectados</div>
+    <div class="card-header">Veículos Conectados</div>
     <div class="card-body">
       @if (selectedVehicle) {
       <h5 class="card-title">{{ selectedVehicle.connected }}</h5>
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="card w-25 mx-1">
-    <div class="card-header">Software Atualizado</div>
+    <div class="card-header">Update Software</div>
     <div class="card-body">
       @if (selectedVehicle) {
       <h5 class="card-title">{{ selectedVehicle.softwareUpdates }}</h5>
@@ -65,7 +65,7 @@
       <tr>
         <th>Codigo - Vin</th>
         <th>Odômetro</th>
-        <th>Nivel de Combustivel</th>
+        <th>Nível de Combustível</th>
         <th>Status</th>
         <th>Lat</th>
         <th>Long</th>

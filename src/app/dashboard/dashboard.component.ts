@@ -37,6 +37,13 @@ export class DashboardComponent implements OnInit {
         .buscarVin(value as string)
         .subscribe((res) => {
           this.carVin = res;
+          if (this.carVin && this.carVin.id) {
+            this.selectCarForms.controls.carId.setValue(
+              String(this.carVin.id),
+              { emitEvent: false }
+            );
+            this.selectedVehicle = this.vehicles[Number(this.carVin.id) - 1];
+          }
         });
     });
   }
@@ -50,6 +57,7 @@ export class DashboardComponent implements OnInit {
     });
     this.selectCarForms.controls.carId.valueChanges.subscribe((id) => {
       this.selectedVehicle = this.vehicles[Number(id) - 1];
+       this.vinForm.controls.vin.setValue(this.selectedVehicle.vin);
     });
     this.onChange();
   }
@@ -58,4 +66,3 @@ export class DashboardComponent implements OnInit {
   //   this.reqVin.unsubscribe();
   // }
   }
-
